@@ -31,6 +31,13 @@ This tutorial is adapted from [this tutorial](https://elitedatascience.com/keras
 * [Use the Model](#use-the-model-to-make-predictions)
 
 ## Build a Model
+
+* Install opencv `numpy` `h5py` `keras` - if you haven't already
+
+```sh
+> pip install numpy h5py keras
+```
+
 * Open `VSCode`
 * Create a project directory
 * Create file `build_model.py`
@@ -167,6 +174,13 @@ model.save("mnist.h5")
 
 
 ## Evaluate the Model
+
+* Install opencv `cv2`
+
+```sh
+> pip install opencv-python
+```
+
 * Create file `eval_model.py`
 
 ```py
