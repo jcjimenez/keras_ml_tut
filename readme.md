@@ -59,7 +59,7 @@ from keras.datasets import mnist
 # load pre-shuffled MNIST data into train and test sets
 (Xtrain, Ytrain), (Xtest, Ytest) = mnist.load_data()
 
-# examine training data shape: (60000, 28, 28)
+# examine training data's dimensions: (60000, 28, 28)
 print Xtrain.shape
 ```
 
@@ -70,11 +70,11 @@ plt.imshow(Xtrain[0])
 plt.show()
 ```
 ```py
-# transform dataset to having shape (#-of-samples, depth, width, height).
+# transform dataset to having 4 dimensions (#-of-samples, depth, width, height).
 Xtrain = Xtrain.reshape(Xtrain.shape[0], 1, 28, 28)
 Xtest = Xtest.reshape(Xtest.shape[0], 1, 28, 28)
 
-# examine training data shape: (60000, 1, 28, 28)
+# examine training data's dimensions: (60000, 1, 28, 28)
 print Xtrain.shape
 ```
 ```py
@@ -87,7 +87,7 @@ Xtrain /= 255
 Xtest /= 255
 ```
 ```py
-# examine training data shape
+# examine training data's dimensions
 print Ytrain.shape # (60000,)
 print Ytrain[:10] # [5 0 4 1 9 2 1 3 1 4]
 
@@ -112,7 +112,7 @@ model = Sequential()
 # 3: the number of rows in each convolution kernel.
 # 3: and the number of columns in each convolution kernel.
 # activation: the type of activation function to use 
-# input_shape: shape of the inputs: 1 channel, 28 px width, 28 px height
+# input_shape: dimensions of the inputs: 1 channel, 28 px width, 28 px height
 # dim_ordering: tells model to use Theano's dimension ordering
 model.add(Conv2D(32, 3, 3, activation='relu',
                  input_shape=(1, 28, 28), dim_ordering='th'))
