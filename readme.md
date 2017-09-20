@@ -254,6 +254,10 @@ print np.around(prediction[0], decimals=0)
 
 * Run `python use_model.py`
 
+![alt text](images/use_model.png "Use Model")
+
+* **Note:** the array above are our 10 classes of numbers [0-9]. **The model accurately predicted the image was an 8 as indicated by the 1 (true) in the 8th place (0-indexed).**
+
 ### Congratulations!
 You've built a deep learning model! You saw how to build a model, evaluate said model, and use it to make predictions. That's all we're going to cover in this but I hope this gave you a better sense for creating ML models.
 

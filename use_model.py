@@ -11,7 +11,7 @@ import numpy as np
 model = load_model("mnist.h5")
 
 # read in image
-img = image.load_img("./images/9-v.png")
+img = image.load_img("./images/8.png")
 plt.imshow(img)
 # plt.show()
 
