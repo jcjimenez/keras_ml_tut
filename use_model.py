@@ -15,15 +15,15 @@ img = image.load_img("./images/9-v.png")
 plt.imshow(img)
 # plt.show()
 
-# show channels
+# show dimensions
 x = image.img_to_array(img)
 print x.shape
 
-# conver to 1 channel gray scale
+# convert to 1 channel gray scale
 x = cv2.cvtColor(x, cv2.COLOR_BGR2GRAY)
 print x.shape
 
-# convert to 4 channels: (nb_samples, nb_channels, width, height)
+# convert to 4 dimensions: (nb_samples, nb_channels/depth, width, height)
 x = x.reshape(1, 1, 28, 28)
 # x = np.expand_dims(x, axis=0)
 # x = np.reshape(x, (1, 28, 28, 1))
