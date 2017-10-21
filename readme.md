@@ -22,7 +22,23 @@ This tutorial is adapted from [this tutorial](https://elitedatascience.com/keras
 * **Knowledge of install python dependencies** - as you run the code below some modules needed may not already be part of your python environment and so you'll need to install the modules to continue.
 
 ### Setting up your environment: [Follow this tutorial](https://elitedatascience.com/keras-tutorial-deep-learning-in-python#step-1)
+Or you may use Docker like so:
 
+```
+docker build .
+```
+
+Copy the hash output from the `docker build .` and use it to run the container:
+ 
+```
+docker run --rm -it -v `pwd`:`pwd` -w `pwd` f0e0c179ca7a bash
+```
+
+Or if you are on a Mac (and have XQuartz installed), you may want to forward X11 display:
+
+```
+docker run --rm -it -v `pwd`:`pwd` -w `pwd` -v /tmp/.X11-unix:/tmp/.X11-unix -e DISPLAY=unix$DISPLAY f0e0c179ca7a bash
+```
 
 ## Table of Contents:
 

@@ -18,7 +18,7 @@ from keras.datasets import mnist
 # load preshuffled MNIST data into train and test sets
 (Xtrain, Ytrain), (Xtest, Ytest) = mnist.load_data()
 
-print Xtrain.shape
+print(Xtrain.shape)
 
 from matplotlib import pyplot as plt
 # show image
@@ -30,7 +30,7 @@ Xtrain = Xtrain.reshape(Xtrain.shape[0], 1, 28, 28)
 Xtest = Xtest.reshape(Xtest.shape[0], 1, 28, 28)
 
 
-print Xtrain.shape
+print(Xtrain.shape)
 
 # final preprocessing step for the input data is to convert our data type
 # to float32
@@ -41,14 +41,14 @@ Xtrain /= 255
 Xtest /= 255
 
 
-print Ytrain.shape
-print Ytrain[:10]
+print(Ytrain.shape)
+print(Ytrain[:10])
 
 # Convert 1-dimensional class arrays to 10-dimensional class matrices
 Ytrain = np_utils.to_categorical(Ytrain, 10)
 Ytest = np_utils.to_categorical(Ytest, 10)
 
-print Ytrain.shape
+print(Ytrain.shape)
 
 # Building model
 model = Sequential()
@@ -58,10 +58,11 @@ model = Sequential()
 # dim_ordering tells model to use Theano's dimension ordering
 model.add(Conv2D(32, 3, 3, activation='relu',
                  input_shape=(1, 28, 28), dim_ordering='th'))
-print model.output_shape
+print(model.output_shape)
 
 # add more layers to our model
-model.add(Conv2D(32, 3, 3, activation='relu'))
+model.add(Conv2D(32, (3, 3), activation='relu'))
+
 # MaxPooling2D is a way to reduce the number of parameters in our model by
 # sliding a 2x2 pooling filter across the previous layer and taking the
 # max of the 4 values in the 2x2 filter
@@ -88,6 +89,6 @@ model.compile(loss='categorical_crossentropy',
 # train model
 model.fit(Xtrain, Ytrain, batch_size=32, epochs=10, verbose=1)
 score = model.evaluate(Xtest, Ytest, verbose=0)
-print score
+print(score)
 
 model.save("mnist.h5")

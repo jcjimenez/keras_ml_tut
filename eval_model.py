@@ -12,5 +12,5 @@ Ytest = np_utils.to_categorical(Ytest, 10)
 
 model = load_model("mnist.h5")
 score = model.evaluate(Xtest, Ytest, verbose=0)
-print model.metrics_names
-print score
+print(model.metrics_names)
+print(score)
